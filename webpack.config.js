@@ -11,27 +11,22 @@ module.exports = {
     }),
     new DefinePlugin({ "process.env.DICK_SIZE": "SO FUCKING BIG" }),
   ],
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   module: {
     rules: [
       {
         test: /\.(?:ico|png|jpe?g|gif|webp)$/i,
-        type: "asset/resource", //  resource \\ inline
-        // parser: {
-        //   dataUrlCondition: {
-        //     maxSize: 30 * 1024,
-        //   },
-        // },
+        type: "asset/resource",
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
         type: "asset/inline",
       },
       {
-        test: /\.jsx?$/,
+        test: /\.[tj]sx?$/i,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: "ts-loader",
         },
       },
       {
@@ -75,6 +70,6 @@ module.exports = {
     open: true,
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", "json"],
   },
 };
