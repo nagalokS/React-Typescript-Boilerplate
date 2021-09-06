@@ -1,0 +1,15 @@
+@use "variables";
+
+h1 {
+  color: red;
+  font-size: 1rem;
+  color: variables.$randomVariable;
+  font-size: var(--fontSize);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
