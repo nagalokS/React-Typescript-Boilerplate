@@ -1,10 +1,9 @@
 const MiniCss = require("mini-css-extract-plugin");
 const HtmlWebpack = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 const { DefinePlugin } = require("webpack");
 module.exports = {
   plugins: [
-    new CleanWebpackPlugin(),
     new MiniCss(),
     new HtmlWebpack({
       template: "./src/index.html",

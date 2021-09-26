@@ -1,7 +1,7 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
 const baseConfig = require("./webpack.config.js");
-
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = merge(baseConfig, {
   target: "browserslist",
   mode: "production",
@@ -13,4 +13,5 @@ module.exports = merge(baseConfig, {
   devServer: {
     hot: false,
   },
+  plugins: [new CleanWebpackPlugin()],
 });
