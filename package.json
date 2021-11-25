@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "start": "cross-env   webpack serve --config webpack.dev.js",
-    "build": "cross-env ANAL=server webpack --config webpack.prod.js",
-    "build-start": "cross-env  webpack serve --config webpack.prod.js",
+    "start": "cross-env   webpack serve --config webpack.dev.js --progress",
+    "build": "cross-env ANAL=server webpack --config webpack.prod.js --progress",
+    "build-start": "cross-env  webpack serve --config  webpack.prod.js --progress",
     "clean": "rm -rf build dist"
   },
   "devDependencies": {
