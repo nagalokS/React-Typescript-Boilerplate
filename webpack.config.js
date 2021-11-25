@@ -14,11 +14,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(?:ico|png|jpe?g|gif|webp)$/i,
+        test: /\.(?:ico|png|jpe?g|gif|webp|svg)$/i,
         type: "asset/resource",
       },
       {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        test: /\.(woff(2)?|eot|ttf|otf)$/,
         type: "asset/inline",
       },
       {
