@@ -1,5 +1,5 @@
-import "../scss/style.scss";
-import "../styles/style.css";
+import '../scss/style.scss';
+import '../styles/style.css';
 
 const App = () => {
   return (

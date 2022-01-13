@@ -1,13 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "start": "cross-env   webpack serve --config webpack.dev.js --progress",
     "build": "cross-env ANAL=server webpack --config webpack.prod.js --progress",
     "build-start": "cross-env  webpack serve --config  webpack.prod.js --progress",
-    "clean": "rm -rf build dist"
+    "clean": "rm -rf build dist",
+    "format": "prettier --write \"./src\"",
+    "start": "cross-env   webpack serve --config webpack.dev.js --progress"
   },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
+    "@types/express-serve-static-core": "^4.17.28",
     "@types/node": "^16.7.10",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
@@ -19,7 +21,8 @@
     "mini-css-extract-plugin": "^2.2.0",
     "postcss": "^8.3.5",
     "postcss-loader": "^6.1.0",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-preset-env": "^7.2.3",
+    "prettier": "^2.5.1",
     "react-refresh": "^0.10.0",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
@@ -34,5 +37,18 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
   }
 }
