@@ -2,6 +2,8 @@ import '../scss/style.scss';
 import '../styles/style.css';
 
 const App = () => {
+  let a;
+  let b;
   return (
     <div>
       <h1>react render</h1>
