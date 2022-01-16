@@ -1,31 +1,32 @@
-const MiniCss = require("mini-css-extract-plugin");
-const HtmlWebpack = require("html-webpack-plugin");
+const MiniCss = require('mini-css-extract-plugin');
+const HtmlWebpack = require('html-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
-const { DefinePlugin } = require("webpack");
+const { DefinePlugin } = require('webpack');
 module.exports = {
   plugins: [
     new MiniCss(),
     new HtmlWebpack({
-      template: "./src/index.html",
+      template: './src/index.html',
     }),
-    new DefinePlugin({ "process.env.DICK_SIZE": "SO FUCKING BIG" }),
+    new DefinePlugin({ 'process.env.DICK_SIZE': 'SO FUCKING BIG' }),
   ],
-  entry: "./src/index.tsx",
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
         test: /\.(?:ico|png|jpe?g|gif|webp|svg)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf)$/,
-        type: "asset/inline",
+        type: 'asset/inline',
       },
       {
         test: /\.[tj]sx?$/i,
         exclude: /node_modules/,
         use: {
-          loader: "ts-loader",
+          loader: 'ts-loader',
         },
       },
       {
@@ -33,11 +34,11 @@ module.exports = {
         use: [
           {
             loader: MiniCss.loader,
-            options: { publicPath: "" },
+            options: { publicPath: '' },
           },
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
         ],
         exclude: /\.module\.(sc|c)ss$/i,
       },
@@ -46,29 +47,30 @@ module.exports = {
         use: [
           {
             loader: MiniCss.loader,
-            options: { publicPath: "" },
+            options: { publicPath: '' },
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: {
-                mode: "local",
-                localIdentName: "[name]_[local]__[hash:base64:5]",
+                mode: 'local',
+                localIdentName: '[name]_[local]__[hash:base64:5]',
               },
             },
           },
-          "postcss-loader",
-          "sass-loader",
+          'postcss-loader',
+          'sass-loader',
         ],
       },
     ],
   },
   devServer: {
     /*port:8080 */
-    host: "192.168.10.2",
+    host: '192.168.10.2',
     open: true,
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx", "json"],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', 'json'],
+    plugins: [new TsconfigPathsPlugin()],
   },
 };
