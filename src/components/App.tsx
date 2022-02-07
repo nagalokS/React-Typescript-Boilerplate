@@ -1,7 +1,8 @@
+import { VFC } from 'react';
 import '../scss/style.scss';
 import '../styles/style.css';
 
-const App = () => {
+const App: VFC = () => {
   let a;
   let b;
   return (
