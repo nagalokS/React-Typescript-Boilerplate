@@ -1,10 +1,16 @@
 const MiniCss = require('mini-css-extract-plugin');
 const HtmlWebpack = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-
+const MediaQueryPlugin = require('media-query-plugin');
 const { DefinePlugin } = require('webpack');
 module.exports = {
   plugins: [
+    new MediaQueryPlugin({
+      include: ['example'],
+      queries: {
+        'screen and (min-width: 45em)': 'd',
+      },
+    }),
     new MiniCss(),
     new HtmlWebpack({
       template: './src/index.html',
@@ -32,11 +38,9 @@ module.exports = {
       {
         test: /\.(sc|c)ss$/i,
         use: [
-          {
-            loader: MiniCss.loader,
-            options: { publicPath: '' },
-          },
+          MiniCss.loader,
           'css-loader',
+          MediaQueryPlugin.loader,
           'postcss-loader',
           'sass-loader',
         ],
@@ -58,6 +62,7 @@ module.exports = {
               },
             },
           },
+          MediaQueryPlugin.loader,
           'postcss-loader',
           'sass-loader',
         ],
