@@ -1,0 +1,25 @@
+.button {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  &:focus {
+    outline-offset: 4px;
+    outline-style: dotted;
+    outline-width: medium;
+  }
+}
+
+.primary {
+  background-color: #1cb841;
+  &:focus {
+    outline-color: #1cb841;
+  }
+}
+.secondary {
+  background-color: #42b8dd;
+  &:focus {
+    outline-color: #42b8dd;
+  }
+}
