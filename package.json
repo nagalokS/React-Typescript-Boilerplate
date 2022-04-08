@@ -15,10 +15,9 @@
     "storybook-serve": "serve  storybook-static"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "eslint"
-    ]
+    "*.{ts,tsx}": ["prettier --write", "eslint --fix"],
+    "*.md": ["prettier --write --parser markdown"],
+    "*.json": ["prettier --write --parser json"]
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -47,6 +46,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-storybook": "^0.5.7",
     "html-webpack-plugin": "^5.3.1",
     "husky": "^7.0.0",
@@ -76,16 +76,7 @@
     "react-dom": "^17.0.2"
   },
   "browserslist": {
-    "development": [
-      "last 2 chrome versions",
-      "last 2 firefox versions",
-      "last 2 edge versions"
-    ],
-    "production": [
-      ">1%",
-      "last 4 versions",
-      "Firefox ESR",
-      "not ie < 11"
-    ]
+    "development": ["last 2 chrome versions", "last 2 firefox versions", "last 2 edge versions"],
+    "production": [">1%", "last 4 versions", "Firefox ESR", "not ie < 11"]
   }
 }
