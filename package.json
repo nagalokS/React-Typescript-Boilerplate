@@ -5,7 +5,7 @@
     "build-start": "cross-env  webpack serve --config  webpack.prod.js --progress",
     "clean": "rm -rf build dist",
     "start": "cross-env   webpack serve --config webpack.dev.js --progress",
-    "typeCheck": "tsc",
+    "typeCheck": "tsc --noEmit",
     "format": "prettier --write \"./src\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --max-warnings=0",
     "prepare": "husky install",
