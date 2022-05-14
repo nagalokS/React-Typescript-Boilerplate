@@ -3,6 +3,9 @@ const HtmlWebpack = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const MediaQueryPlugin = require('media-query-plugin');
 const { DefinePlugin } = require('webpack');
+const { InjectManifest } = require('workbox-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   plugins: [
     new MediaQueryPlugin({
@@ -16,6 +19,20 @@ module.exports = {
       template: './src/index.html',
     }),
     new DefinePlugin({ 'process.env.DICK_SIZE': 'SO FUCKING BIG' }),
+    new InjectManifest({
+      swSrc: './src/sw.js',
+      swDest: 'sw.js',
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: './src/logos/152.png', to: 'logos' },
+        { from: './src/logos/192.png', to: 'logos' },
+        { from: './src/logos/384.png', to: 'logos' },
+        { from: './src/logos/512.png', to: 'logos' },
+        { from: './src/logos/favicon.ico', to: '.' },
+        { from: './src/manifest.json', to: '' },
+      ],
+    }),
   ],
   entry: './src/index.tsx',
   module: {
