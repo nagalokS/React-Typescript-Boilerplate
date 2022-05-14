@@ -1,4 +1,4 @@
-import { EmbedHTMLAttributes, FC, VFC } from 'react';
+import { EmbedHTMLAttributes, FC } from 'react';
 import Container from './Container/Container';
 import '../scss/style.scss';
 import '../styles/style.css';
@@ -11,7 +11,7 @@ const BorderElement: FC<BorderElementProps> = ({ className, children, ...rest })
   </em>
 );
 
-const App: VFC = () => {
+const App: FC = () => {
   return (
     <div>
       <h1>react render</h1>
