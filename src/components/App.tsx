@@ -20,8 +20,12 @@ const App: FC = () => {
       <Container as={BorderElement} letterSpacing={12}>
         as ellement
       </Container>
-      <img src={img33} alt="usefull info reaaly" />
-      <img src="http://www.returndates.com/backgrounds/narcos.logo.png" alt="usefull info reaaly" />
+      <img style={{ maxWidth: '90vw' }} src={img33} alt="usefull info reaaly" />
+      <img
+        style={{ maxWidth: '90vw' }}
+        src="http://www.returndates.com/backgrounds/narcos.logo.png"
+        alt="usefull info reaaly"
+      />
     </div>
   );
 };
