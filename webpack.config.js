@@ -29,7 +29,7 @@ module.exports = {
         { from: './src/logos/192.png', to: 'logos' },
         { from: './src/logos/384.png', to: 'logos' },
         { from: './src/logos/512.png', to: 'logos' },
-        { from: './src/logos/favicon.ico', to: '.' },
+        { from: './src/logos/favicon.ico', to: 'logos' },
         { from: './src/manifest.json', to: '' },
       ],
     }),
