@@ -3,6 +3,7 @@ import Container from './Container/Container';
 import '../scss/style.scss';
 import '../styles/style.css';
 import Style from './Border.module.scss';
+import TestOrder from './TestOrder';
 
 type BorderElementProps = EmbedHTMLAttributes<HTMLEmbedElement>;
 const BorderElement: FC<BorderElementProps> = ({ className, children, ...rest }) => (
@@ -19,6 +20,7 @@ const App: FC = () => {
       <Container as={BorderElement} letterSpacing={12}>
         as ellement
       </Container>
+      <TestOrder age={22} name="TRex" />
     </div>
   );
 };

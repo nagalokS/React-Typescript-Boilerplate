@@ -19,15 +19,26 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'jsx-a11y', 'react-hooks'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'jsx-a11y',
+    'react-hooks',
+    'typescript-sort-keys',
+    'sort-keys-fix',
+  ],
+  rules: {
+    'no-console': 'warn',
+    'react/prop-types': 0,
+    'react/react-in-jsx-scope': 'off',
+    'sort-keys': 'error',
+    'typescript-sort-keys/interface': 'error',
+    'typescript-sort-keys/string-enum': 'error',
+    'sort-keys-fix/sort-keys-fix': 'error',
+  },
   settings: {
     react: {
       version: 'detect',
     },
-  },
-  rules: {
-    'react/react-in-jsx-scope': 'off',
-    'no-console': 'warn',
-    'react/prop-types': 0,
   },
 };
