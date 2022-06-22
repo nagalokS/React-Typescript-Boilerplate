@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import style from './TestOrder.module.scss';
 
 type TestOrderType = {
   age: number;
@@ -11,7 +10,7 @@ const obj123 = {
 };
 const TestOrder: FC<TestOrderType> = ({ name, age }) => {
   return (
-    <div className={style.wrapper}>
+    <div>
       <p>{name}</p>
       <p>{age}</p>
       <p>{obj123.age}</p>

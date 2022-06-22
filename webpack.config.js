@@ -5,13 +5,15 @@ const MediaQueryPlugin = require('media-query-plugin');
 const { DefinePlugin } = require('webpack');
 module.exports = {
   plugins: [
-    new MediaQueryPlugin({
-      include: ['example'],
-      queries: {
-        'screen and (min-width: 45em)': 'd',
-      },
+    // new MediaQueryPlugin({
+    //   include: ['example'],
+    //   queries: {
+    //     'screen and (min-width: 45em)': 'd',
+    //   },
+    // }),
+    new MiniCss({
+      filename: '[name][hash].css',
     }),
-    new MiniCss(),
     new HtmlWebpack({
       template: './src/index.html',
     }),
@@ -62,7 +64,7 @@ module.exports = {
               },
             },
           },
-          MediaQueryPlugin.loader,
+          // MediaQueryPlugin.loader,
           'postcss-loader',
           'sass-loader',
         ],

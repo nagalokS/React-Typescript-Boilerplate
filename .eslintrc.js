@@ -32,9 +32,9 @@ module.exports = {
     'react/prop-types': 0,
     'react/react-in-jsx-scope': 'off',
     'sort-keys': 'error',
+    'sort-keys-fix/sort-keys-fix': 'error',
     'typescript-sort-keys/interface': 'error',
     'typescript-sort-keys/string-enum': 'error',
-    'sort-keys-fix/sort-keys-fix': 'error',
   },
   settings: {
     react: {

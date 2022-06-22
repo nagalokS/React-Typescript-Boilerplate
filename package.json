@@ -7,7 +7,7 @@
     "start": "cross-env   webpack serve --config webpack.dev.js --progress",
     "typeCheck": "tsc --noEmit",
     "format": "prettier --write \"./src\"",
-    "lint": "eslint  \"src/**/*.{js,jsx,ts,tsx}\" --max-warnings=0",
+    "lint": "eslint --fix  \"src/**/*.{js,jsx,ts,tsx}\" --max-warnings=0",
     "prepare": "husky install",
     "precommit": "lint-staged"
   },

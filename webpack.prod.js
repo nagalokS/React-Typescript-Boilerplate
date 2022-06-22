@@ -10,6 +10,7 @@ module.exports = merge(baseConfig, {
     path: path.resolve(__dirname, 'build'),
     assetModuleFilename: 'images/[hash][ext][query]',
     clean: true,
+    filename: '[name][hash].js',
   },
   devServer: {
     hot: false,
