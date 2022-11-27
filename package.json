@@ -11,18 +11,6 @@
     "prepare": "husky install",
     "precommit": "lint-staged"
   },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "eslint --fix"
-    ],
-    "*.md": [
-      "prettier --write --parser markdown"
-    ],
-    "*.json": [
-      "prettier --write --parser json"
-    ]
-  },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
     "@types/express-serve-static-core": "^4.17.28",
@@ -66,16 +54,7 @@
     "react-dom": "^18.2.0"
   },
   "browserslist": {
-    "development": [
-      "last 2 chrome versions",
-      "last 2 firefox versions",
-      "last 2 edge versions"
-    ],
-    "production": [
-      ">1%",
-      "last 4 versions",
-      "Firefox ESR",
-      "not ie < 11"
-    ]
+    "development": ["last 2 chrome versions", "last 2 firefox versions", "last 2 edge versions"],
+    "production": [">1%", "last 4 versions", "Firefox ESR", "not ie < 11"]
   }
 }
