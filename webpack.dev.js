@@ -9,6 +9,7 @@ module.exports = merge(baseConfig, {
   devtool: 'source-map',
   devServer: {
     hot: true,
+    historyApiFallback: true,
   },
   plugins: [new ReactRefresh()],
 });
