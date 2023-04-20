@@ -28,7 +28,10 @@ module.exports = {
     'sort-keys-fix',
   ],
   rules: {
-    'no-console': 'warn',
+    '@typescript-eslint/explicit-module-boundary-types': 'off', //пока отключил
+    '@typescript-eslint/no-unused-vars': 'error',
+    'no-console': 'error',
+    'no-unused-vars': 'off',
     'react/prop-types': 0,
     'react/react-in-jsx-scope': 'off',
     'sort-keys': 'error',
